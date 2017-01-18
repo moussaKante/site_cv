@@ -1,0 +1,364 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+	border-radius: 2
+}
+
+
+/***********FIN DU RESET***********/
+body{
+	background-color: #999;
+	font-family: 'Slabo 27px', serif;
+}
+header{
+	width: 100%;
+}
+span{
+	color: #6D9A97;
+}
+#logo{
+	float: left;
+	line-height: 60px;
+	padding-left: 50px;
+	text-decoration: none;
+	color: #fff;
+	font-size: 1.8em;
+	font-family: 'Lobster', cursive;
+}
+
+.menu {
+	width: 100%;
+	background-color: #343D54;
+}
+
+.menu ul {
+	float: right;
+	margin-right: 70px;
+}
+
+.menu ul li {
+	display: inline-block;
+}
+
+.menu ul li a {
+	margin-left: 5px;
+	text-decoration: none;
+	list-style-type: none;
+	display: block;
+	width: 140px;
+	padding: 5px;
+	line-height: 50px;
+	text-align: center;
+	font-weight: bold;
+	color: #fff;
+	transition:background-color 2s,border-radius 1s,border 1s ;
+}
+
+.menu ul li a:hover{
+	background-color: #6D9A97;
+	border-radius:30px;
+	/*border: 1px solid;*/
+}
+
+.clear{
+	clear:both;
+}
+
+
+
+
+
+
+/******** FIN DU HEADER **********/
+
+#image{
+border-radius: 50%;
+width: 200px;
+height: 200px;
+margin: 0 auto;
+display: block;
+box-shadow: 5px 5px 3px #6D9A97;
+}
+
+.image {
+	border-radius: 50%;
+	width: 200px;
+	height: 200px;
+	float: left;
+	margin:10px;
+	box-shadow: 5px 5px 3px #6D9A97;
+}
+#image_utilisateur{
+	margin-bottom: 50px;
+	border-radius: 50%;
+	width: 200px;
+	height: 200px;
+	left:45px;
+	position: relative;
+	bottom:125px;
+	margin-left: 15px;
+	box-shadow: 5px 5px 3px #6D9A97;
+	
+}
+/*********** TABLEAU *************************/
+table{
+	border: 2px solid #6D9A97;
+	margin: 0 auto;
+	width: 600px;
+	font-size: 1.4em;
+
+}
+th{
+	border: 2px solid #6D9A97;
+	font-weight: bold;
+}
+td{
+	border: 2px solid #6D9A97;
+	padding-left: 5px;
+}
+
+caption {
+	font-weight: bold;
+	font-size: 1.8em;
+	margin: 10px;
+	color: #6D9A97;
+}
+
+.tableau_connexion{
+	border:none;
+}
+.tableRow{
+	border:none;
+	display: inline-block;
+}
+.Thead{
+	border: none;
+}
+.nom_champs_connexion{
+font-size: 0.8em;
+color: #fff;
+padding:5px;
+line-height: 0px;
+margin-top: 15px;
+margin-left: 80px;
+}
+.nom_champs_login{
+padding: 5px;
+margin-top: 0px;
+/* margin-left: 60px; */
+}
+#tableRow1{
+	margin-left: 52px;
+}
+#tableRow2{
+	margin-left: 0px;
+}
+#tableRow3{
+margin-left: 90px;
+}
+#tableRow4{
+margin-bottom: 11px;
+}
+#mdp_oublie{
+	color: #6d9a97;
+	text-align: center;
+	font-size:0.9em;
+	padding: 15px;
+	margin-left: 50px;
+	text-decoration: none;
+}
+/************** FIN DU TABLEAU *********************/
+
+/******************* CONTENU PRINCIPAL ESPACE ADMIN ************************/
+#conteneur{
+	background-color: #fff;
+	border-radius: 5px;
+	height: 500px;
+	width: 1500px;
+	margin: 0 auto;
+	margin-top: 20px;
+}
+.conteneur{
+	background-color: #fff;
+	border-radius: 5px;
+	width: 1500px;
+	margin: 0 auto;
+	margin-top: 20px;
+}
+
+.espace_utilisateur{
+	background-color: #6D9A97;
+	text-align: center;
+	font-size: 2em;
+	color: #fff;
+	border-radius: 1px;
+	font-family: 'Lobster', cursive;
+	padding: 5px;
+}
+
+.validation {
+	background-color: #6D9A97;
+	padding: 10px;
+}
+
+/******************* FORMULAIRE ********************/
+form{
+	margin: 0 auto ; 
+	width: 680px;
+}
+
+label {
+	margin-left: 10px;
+	font-weight: bold;
+	display: block;
+	float: left;
+	line-height: 60px;
+	display: block;
+}
+
+.conteneur-form{
+	background-color: #fff;
+	border-radius: 5px;
+	width: 600px;
+	margin: 0 auto;
+	margin-top: 20px;
+}
+
+.champ_texte{
+	margin-left: 10px;
+	margin-top: 10px;
+	display: block;
+	float: left;
+}
+.nom_champs{
+	display: block;
+	margin-left: 5px;
+	color: #6D9A97;
+}
+
+.btn_connexion{
+	margin :10px auto;
+	width: 100%;
+	padding: 5px;
+	border: 1px solid #343D54;
+	border-radius: 5px;
+	color: #343D54;
+}
+
+#champs_select{
+	margin: 17px;
+}
+
+#form_inscription{
+	margin:0 auto ;
+	width: 400px;
+}
+#form_connexion{
+	margin:0 auto ;
+	width: 250px;
+}
+
+#envoyer{
+	margin-left: 15px;
+	margin-top: 10px;
+}
+
+.title-form{
+	color: #6D9A97;
+	background: #343D54;
+	padding: 5px;
+	text-align: center;
+	font-family: 'Lobster', cursive;
+	font-size: 1.7em;
+	border-radius: 3px;
+}
+.champ_input_connexion{
+	border-radius: 10px;
+	border: 1px solid #6D9A97 ;
+	padding: 5px;
+	margin-left: 7px;
+	margin-top: 15px;
+}
+.champ_input {
+	width: 90%;
+	border-radius: 10px;
+	border: 1px solid #6D9A97 ;
+	padding: 5px;
+}
+/****************** FIN DU FORMULAIRE ********************/
+.txt {
+	color:#6D9A97;
+	font-size: 1.6em;
+	text-align: center;
+	width: 30%;
+	margin:50px auto 0;
+}
+.title {
+	background-color: #6D9A97;
+	text-align: center;
+	color: #fff;
+	font-family: 'Lobster', cursive;
+	font-size: 1.7em;
+	padding: 10px;
+
+}
+.form_exp{
+	margin: 0 auto ; 
+	width: 1300px;
+
+}
+#send{
+	width: 120px;
+	margin-top: 12px;
+	margin-left:20px;
+	padding: 5px;
+}
+#envoyer_loisir{
+	margin-top: 15px;
+	margin-left: 10px;
+	line-height: 25px;
+}
+
+.modification, .suppression {
+	text-decoration: none;
+	color:#6D9A97;
+}
