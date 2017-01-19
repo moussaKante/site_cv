@@ -14,10 +14,10 @@ if($_POST){
 
 	if(isset($_GET['action']) && $_GET['action'] == 'ajout'){
 
-	$resultat = $pdo -> prepare("INSERT INTO experiences(id_experience,titre_exp,sous_titre_exp,dates,description) VALUES(:id_experience,:titre_exp,:sous_titre_exp,:dates,:description)");
+	$resultat = $pdo -> prepare("INSERT INTO experiences(id_experience,titre_exp,sous_titre_exp,dates,description,logo) VALUES(:id_experience,:titre_exp,:sous_titre_exp,:dates,:description,:logo)");
 	}
 	else{
-		$resultat = $pdo -> prepare("REPLACE INTO experiences(id_experience,titre_exp,sous_titre_exp,dates,description) VALUES(:id_experience,:titre_exp,:sous_titre_exp,:dates,:description)");
+		$resultat = $pdo -> prepare("REPLACE INTO experiences(id_experience,titre_exp,sous_titre_exp,dates,description,logo) VALUES(:id_experience,:titre_exp,:sous_titre_exp,:dates,:description,:logo)");
 
 		$resultat -> bindParam(':id_experience',$_POST['id_experience'],PDO::PARAM_INT);
 		$produit .= '<div class="validation">L\' experience <b>'. $_POST['titre_exp'] . '</b> a bien été modifier</div>';
@@ -30,6 +30,7 @@ if($_POST){
 	$resultat -> bindParam(':sous_titre_exp',$_POST['sous_titre_exp'],PDO::PARAM_STR);
 	$resultat -> bindParam(':dates',$_POST['dates'],PDO::PARAM_INT);
 	$resultat -> bindParam(':description',$_POST['description'],PDO::PARAM_STR);
+	$resultat -> bindParam(':logo',$_POST['logo'],PDO::PARAM_STR);
 	/*$resultat -> bindParam(':id_competence',$_POST['id_competence'],PDO::PARAM_INT);*/
 	$resultat -> execute();
 	$produit .= '<div class="validation">L\' experience <b>'. $_POST['titre_exp'] . '</b> a bien été ajoute</div>';
@@ -112,7 +113,7 @@ $produit_actuel = $resultat -> fetch(PDO::FETCH_ASSOC);
 	$sous_titre_exp = 			(isset($produit_actuel['sous_titre_exp'])) 			? $produit_actuel['sous_titre_exp'] : '';
 	$dates = 					(isset($produit_actuel['dates'])) 			? $produit_actuel['dates'] : '';
 	$description = 				(isset($produit_actuel['description'])) 			? $produit_actuel['description'] : '';
-	/*$id_competence = 			(isset($produit_actuel['id_competence'])) 			? $produit_actuel['id_competence'] : '';*/
+	$logo = 			(isset($produit_actuel['logo'])) 			? $produit_actuel['logo'] : '';
 ?>
 
 <!-- HTML -->
@@ -139,6 +140,9 @@ $produit_actuel = $resultat -> fetch(PDO::FETCH_ASSOC);
 		<script>
 			CKEDITOR.replace('editor1');
 		</script>
+
+		<label>Logo</label>
+		<input type="text" name="logo" value="<?= $logo ?>" >
 		
 		<input type="submit" value="Enregistrer" id="send">
 		<div class="clear"></div>

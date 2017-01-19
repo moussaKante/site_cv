@@ -146,10 +146,7 @@ $produit_actuel = $resultat -> fetch(PDO::FETCH_ASSOC);
 		<input type="hidden" name="id_competence"  class="champ_texte" value="<?= $id_competence ?>" >
 
 		<label>Competences</label>
-		<textarea col="25" rows="1" style="resize:none;margin-top:12px;" id="editor1"  name="competence"  class="champ_texte" ><?= $competences ?></textarea>
-		<script>
-			CKEDITOR.replace('editor1');
-		</script>
+		<textarea col="25" rows="1" style="resize:none;margin-top:12px;"   name="competence"  class="champ_texte" ><?= $competences ?></textarea>
 		
 		<label>Titre de la compétence</label>
 		<input type="text" name="titre_competence" class="champ_texte"  value="<?= $titre_competence ?>" >

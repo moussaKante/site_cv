@@ -1,0 +1,9 @@
+.timeline > li .timeline-image{
+	background-color: white;
+}
+
+#type_C:after{
+	font-family: 'FontAwesome';
+	content:"\f005 \f005 \f006 \f006 \f006";
+	margin-left: 10px;
+}

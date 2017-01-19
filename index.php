@@ -1,4 +1,19 @@
 <!DOCTYPE html>
+<?php require('connexion/connexion.php'); ?>
+<?php 
+$resultat = $pdo -> query("SELECT * FROM utilisateur") ;
+$utilisateur = $resultat->fetch();
+$resultat = $pdo -> query("SELECT * FROM titre");
+$titre = $resultat->fetch();
+$resultat = $pdo -> query("SELECT * FROM loisir");
+$loisir= $resultat->fetch();
+$resultat = $pdo -> query("SELECT * FROM formation");
+$formation=$resultat->fetchAll();
+$resultat = $pdo -> query("SELECT * FROM experiences");
+$experience = $resultat->fetchAll();
+$resultat = $pdo -> query("SELECT * FROM competence");
+$competence = $resultat->fetchAll();
+ ?>
 <html lang="en">
 
 <head>
@@ -9,7 +24,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Agency - Start Bootstrap Theme</title>
+    <title><?= $utilisateur['prenom'].' '.$utilisateur['nom'].' - '.$titre['titre_cv']; ?></title>
 
     <!-- Bootstrap Core CSS -->
     <link href="front/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -23,6 +38,7 @@
 
     <!-- Theme CSS -->
     <link href="front/css/agency.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="front/css/styleFront.css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -43,7 +59,7 @@
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand page-scroll" href="#page-top">Start Bootstrap</a>
+                <a class="navbar-brand page-scroll" href="#page-top"><?= $utilisateur['prenom'].' '.$utilisateur['nom'];?></a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -56,10 +72,16 @@
                         <a class="page-scroll" href="#services">Services</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#portfolio">Portfolio</a>
+                        <a class="page-scroll" href="#mon_cv">Mon CV</a>
+                    </li>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#about">About</a>
+                        <a class="page-scroll" href="#formation">Formation</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#competence">Compétence</a>
+                    <li>
+                        <a class="page-scroll" href="#portfolio">Portfolio</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="#team">Team</a>
@@ -78,15 +100,15 @@
     <header>
         <div class="container">
             <div class="intro-text">
-                <div class="intro-lead-in">Thomas Kante</div>
-                <div class="intro-heading">Integrateur Developpeur web</div>
+                <div class="intro-lead-in"><?= $utilisateur['prenom'].' '.$utilisateur['nom'] ?></div>
+                <div class="intro-heading"><?= $titre['titre_cv']; ?></div>
                 <a href="#services" class="page-scroll btn btn-xl">En savoir plus</a>
             </div>
         </div>
     </header>
 
     <!-- Services Section -->
-    <section id="services">
+    <section id="services" class="bg-light-gray">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
@@ -95,31 +117,128 @@
                 </div>
             </div>
             <div class="row text-center">
-                <div class="col-md-4">
+                <div class="col-md-6">
                     <span class="fa-stack fa-4x">
                         <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fa fa-shopping-cart fa-stack-1x fa-inverse"></i>
+                        <i class="fa fa-desktop fa-stack-1x fa-inverse"></i>
                     </span>
-                    <h4 class="service-heading">E-Commerce</h4>
+                    <h4 class="service-heading">Développement Web</h4>
                     <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-6">
                     <span class="fa-stack fa-4x">
                         <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fa fa-laptop fa-stack-1x fa-inverse"></i>
+                        <i class="fa fa-tablet fa-stack-1x fa-inverse"></i>
                     </span>
                     <h4 class="service-heading">Responsive Design</h4>
                     <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
                 </div>
-                <div class="col-md-4">
-                    <span class="fa-stack fa-4x">
-                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fa fa-lock fa-stack-1x fa-inverse"></i>
-                    </span>
-                    <h4 class="service-heading">Web Security</h4>
-                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+<!--                 <div class="col-md-4">
+    <span class="fa-stack fa-4x">
+        <i class="fa fa-circle fa-stack-2x text-primary"></i>
+        <i class="fa fa-lock fa-stack-1x fa-inverse"></i>
+    </span>
+    <h4 class="service-heading"></h4>
+    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+</div>
+            </div> -->
+        </div>
+    </section>
+
+     <!-- About Mon CV -->
+    <section id="mon_cv">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Mes Expériences </h2>
+                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
                 </div>
             </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <ul class="timeline">
+                  <?php
+                    $i=0;
+                    while($i<count($experience)){
+                            ?><li <?php if (($i % 2) == 0)
+                                { echo 'class="timeline-inverted"';}?>>
+                                <div class="timeline-image">
+                                    <img class="img-circle img-responsive" src="front/img/about/<?= $experience[$i]['logo'] ?>" alt="" style="width: 158px;height: 158px;">
+                                </div>
+                                <div class="timeline-panel">
+                                    <div class="timeline-heading">
+                                        <h4><?= $experience[$i]['dates']; ?></h4>
+                                            <h4 class="subheading"><?= $experience[$i]['titre_exp'].' <br> '.$experience[$i]['sous_titre_exp'];?></h4>
+                                    </div>
+                                    <div class="timeline-body">
+                                        <p class="text-muted"><?= $experience[$i]['description'];?></p>
+                                    </div>
+                                </div>
+                            </li><?php
+                            $i++;
+                    }                        
+                     ?>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+  
+  <!-- Services formation -->
+    <section id="formation" class="bg-light-gray">
+        <div class="container">
+             <div class="row">
+                <div class="col-lg-12 text-center">
+                 <span class="fa-stack fa-4x">
+                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                        <i class="fa fa-graduation-cap fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <h2 class="section-heading">Mes formations</h2>
+                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                </div>
+            </div>
+            
+            <?php
+                $i=0;
+                while($i<count($formation)){?>
+                <div class="col-md-6">
+                <h4 class="service-heading"><?= $formation[$i]['titre_formation'] ?></h4>
+                <p class="text-muted"><?= $formation[$i]['dates_formation'].'<br>'.$formation[$i]['description_formation'] ?></p>
+                </div>
+                 <?php
+                 $i++;
+             } 
+
+                 ?>
+            
+        </div>
+    </section>
+  <!-- Services compétence -->
+    <section id="competence" >
+        <div class="container">
+             <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Mes Compétences</h2>
+                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                </div>
+            </div>
+            <div class="col-md-4 col-md-offset-3">
+            <span class="fa-stack fa-4x">
+                <i class="fa fa-html5 fa-stack-2x text-primary"></i>
+            </span>
+                <h4 class="service-heading"><?= $competence[0]['titre_competence']; ?></h4>
+                <?php
+                    $i=0;
+                    while($i<count($competence)){?>
+                    <div class="col-md-6">
+                    <p class="text-muted" id="<?= 'type_'.$competence[$i]['competence'];?>"><?= $competence[$i]['competence'] ?></p>
+                    </div>
+                     <?php
+                     $i++;
+                    } 
+
+                ?>
+            </div>      
         </div>
     </section>
 
@@ -221,87 +340,6 @@
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">About</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <ul class="timeline">
-                        <li>
-                            <div class="timeline-image">
-                                <img class="img-circle img-responsive" src="front/img/about/1.jpg" alt="">
-                            </div>
-                            <div class="timeline-panel">
-                                <div class="timeline-heading">
-                                    <h4>2009-2011</h4>
-                                    <h4 class="subheading">Our Humble Beginnings</h4>
-                                </div>
-                                <div class="timeline-body">
-                                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="timeline-inverted">
-                            <div class="timeline-image">
-                                <img class="img-circle img-responsive" src="front/img/about/2.jpg" alt="">
-                            </div>
-                            <div class="timeline-panel">
-                                <div class="timeline-heading">
-                                    <h4>March 2011</h4>
-                                    <h4 class="subheading">An Agency is Born</h4>
-                                </div>
-                                <div class="timeline-body">
-                                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="timeline-image">
-                                <img class="img-circle img-responsive" src="front/img/about/3.jpg" alt="">
-                            </div>
-                            <div class="timeline-panel">
-                                <div class="timeline-heading">
-                                    <h4>December 2012</h4>
-                                    <h4 class="subheading">Transition to Full Service</h4>
-                                </div>
-                                <div class="timeline-body">
-                                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="timeline-inverted">
-                            <div class="timeline-image">
-                                <img class="img-circle img-responsive" src="front/img/about/4.jpg" alt="">
-                            </div>
-                            <div class="timeline-panel">
-                                <div class="timeline-heading">
-                                    <h4>July 2014</h4>
-                                    <h4 class="subheading">Phase Two Expansion</h4>
-                                </div>
-                                <div class="timeline-body">
-                                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="timeline-inverted">
-                            <div class="timeline-image">
-                                <h4>Be Part
-                                    <br>Of Our
-                                    <br>Story!</h4>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Team Section -->
     <section id="team" class="bg-light-gray">
         <div class="container">
@@ -329,7 +367,7 @@
                 </div>
                 <div class="col-sm-4">
                     <div class="team-member">
-                        <img src="img/team/2.jpg" class="img-responsive img-circle" alt="">
+                        <img src="front/img/team/2.jpg" class="img-responsive img-circle" alt="">
                         <h4>Larry Parker</h4>
                         <p class="text-muted">Lead Marketer</p>
                         <ul class="list-inline social-buttons">
@@ -443,7 +481,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
-                    <span class="copyright">Copyright &copy; Your Website 2016</span>
+                    <span class="copyright">Copyright &copy; <?= $utilisateur['prenom'].' '.$utilisateur['nom']; ?> 2016</span>
                 </div>
                 <div class="col-md-4">
                     <ul class="list-inline social-buttons">
