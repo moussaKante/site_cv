@@ -7,3 +7,62 @@
 	content:"\f005 \f005 \f006 \f006 \f006";
 	margin-left: 10px;
 }
+#type_HTML5:after{
+	font-family: 'FontAwesome';
+	content:"\f005 \f005 \f005 \f123 \f006";
+	margin-left: 10px;
+}
+#type_CSS:after{
+	font-family: 'FontAwesome';
+	content:"\f005 \f005 \f005 \f005 \f006";
+	margin-left: 10px;
+}
+#type_Javascript:after{
+	font-family: 'FontAwesome';
+	content:"\f005 \f005 \f123 \f006 \f006";
+	margin-left: 10px;
+}
+#type_jquery:after{
+	font-family: 'FontAwesome';
+	content:"\f005 \f005 \f123 \f006 \f006";
+	margin-left: 10px;
+}
+#type_PHP:after{
+	font-family: 'FontAwesome';
+	content:"\f005 \f005 \f005 \f123 \f006";
+	margin-left: 10px;
+}
+#type_SQL:after{
+	font-family: 'FontAwesome';
+	content:"\f005 \f005 \f005 \f005 \f006";
+	margin-left: 10px;
+}
+#type_Ajax:after{
+	font-family: 'FontAwesome';
+	content:"\f005 \f123 \f006 \f006 \f006";
+	margin-left: 10px;
+}
+#type_BootStrap:after{
+	font-family: 'FontAwesome';
+	content:"\f005 \f005 \f005 \f123 \f006";
+	margin-left: 10px;
+}
+#type_Wordpress:after{
+	font-family: 'FontAwesome';
+	content:"\f005 \f005 \f005 \f123 \f006";
+	margin-left: 10px;
+}
+#type_GitKraken:after{
+	font-family: 'FontAwesome';
+	content:"\f005 \f005 \f123 \f006 \f006";
+	margin-left: 10px;
+}
+#type_GitHub:after{
+	font-family: 'FontAwesome';
+	content:"\f005 \f005 \f123 \f006 \f006";
+	margin-left: 10px;
+}
+
+.text-muted{
+	text-align: right;
+}

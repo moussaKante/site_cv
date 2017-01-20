@@ -69,7 +69,7 @@ $competence = $resultat->fetchAll();
                         <a href="#page-top"></a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#services">Services</a>
+                        <a class="page-scroll" href="#services">A propos</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="#mon_cv">Mon CV</a>
@@ -112,8 +112,8 @@ $competence = $resultat->fetchAll();
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Services</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                    <h2 class="section-heading">A propos</h2>
+                    <h3 class="section-subheading text-muted">Hier passionnée par le web , aujourd'hui jeune développeur,j'ai transforme ma passions en travail. Je suis curieux et  </h3>
                 </div>
             </div>
             <div class="row text-center">
@@ -219,26 +219,37 @@ $competence = $resultat->fetchAll();
              <div class="row">
                 <div class="col-lg-12 text-center">
                     <h2 class="section-heading">Mes Compétences</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                    <h3 class="section-subheading ">Lorem ipsum dolor sit amet consectetur.</h3>
                 </div>
             </div>
-            <div class="col-md-4 col-md-offset-3">
-            <span class="fa-stack fa-4x">
-                <i class="fa fa-html5 fa-stack-2x text-primary"></i>
-            </span>
-                <h4 class="service-heading"><?= $competence[0]['titre_competence']; ?></h4>
+            <div class="col-md-12 text-center">
+                <span class="fa-stack fa-4x ">
+                    <i class="fa fa-html5 fa-stack-2x text-primary"></i>
+                </span>
+            <h4 class="service-heading"><?= $competence[0]['titre_competence']; ?></h4>
+            </div>   
                 <?php
-                    $i=0;
-                    while($i<count($competence)){?>
-                    <div class="col-md-6">
-                    <p class="text-muted" id="<?= 'type_'.$competence[$i]['competence'];?>"><?= $competence[$i]['competence'] ?></p>
-                    </div>
+                    $i=0;?>
+                    <div class="row">
+                    <?php while($i<count($competence)){?>
+                        <?php if($i == 0) {
+                           echo '<div class="col-md-6">';
+                        } ?>
+                            <p class="text-muted" id="<?= 'type_'.$competence[$i]['competence'];?>"><?= $competence[$i]['competence'] ?></p>
+                        
+                        
+                        <?php if($i%round(count($competence)/2)== round(count($competence)/2)-1) {
+                            echo '</div><div class="col-md-6">';
+                        } ?>
+                        <?php if($i == count($competence)-1 ) {
+                           echo '</div>';
+                        } ?>
                      <?php
                      $i++;
                     } 
 
                 ?>
-            </div>      
+                </div>  
         </div>
     </section>
 
