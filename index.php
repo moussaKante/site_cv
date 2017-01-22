@@ -74,17 +74,11 @@ $competence = $resultat->fetchAll();
                     <li>
                         <a class="page-scroll" href="#mon_cv">Mon CV</a>
                     </li>
-                    </li>
                     <li>
                         <a class="page-scroll" href="#formation">Formation</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="#competence">Compétence</a>
-                    <li>
-                        <a class="page-scroll" href="#portfolio">Portfolio</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#team">Team</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="#contact">Contact</a>
@@ -112,8 +106,13 @@ $competence = $resultat->fetchAll();
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
+                    <div class="col-sm-12">
+                        <div class="team-member">
+                            <img src="front/img/team/1.jpg" class="img-responsive img-circle" alt="" style="width: 20%;">
+                        </div>
+                    </div>
                     <h2 class="section-heading">A propos</h2>
-                    <h3 class="section-subheading text-muted">Hier passionnée par le web , aujourd'hui jeune développeur,j'ai transforme ma passions en travail. Je suis curieux et  </h3>
+                    <h3 class="section-subheading ">Hier passionnée par le web , aujourd'hui jeune développeur,j'ai transforme ma passions en travail. Je suis curieux et  </h3>
                 </div>
             </div>
             <div class="row text-center">
@@ -163,7 +162,7 @@ $competence = $resultat->fetchAll();
                             ?><li <?php if (($i % 2) == 0)
                                 { echo 'class="timeline-inverted"';}?>>
                                 <div class="timeline-image">
-                                    <img class="img-circle img-responsive" src="front/img/about/<?= $experience[$i]['logo'] ?>" alt="" style="width: 158px;height: 158px;">
+                                    <img class="img-circle img-responsive" src="front/img/about/<?= $experience[$i]['logo'] ?>" alt="<?= $experience[$i]['logo'] ?>" style="width: 100% ; height: 100%;">
                                 </div>
                                 <div class="timeline-panel">
                                     <div class="timeline-heading">
@@ -253,202 +252,110 @@ $competence = $resultat->fetchAll();
         </div>
     </section>
 
-    <!-- Portfolio Grid Section -->
-    <section id="portfolio" class="bg-light-gray">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Portfolio</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+<!--     Portfolio Grid Section
+<section id="portfolio" class="bg-light-gray">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="section-heading">Portfolio</h2>
+                <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 col-sm-6 portfolio-item">
+                <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
+                    <div class="portfolio-hover">
+                        <div class="portfolio-hover-content">
+                            <i class="fa fa-plus fa-3x"></i>
+                        </div>
+                    </div>
+                    <img src="front/img/portfolio/roundicons.png" class="img-responsive" alt="">
+                </a>
+                <div class="portfolio-caption">
+                    <h4>Round Icons</h4>
+                    <p class="text-muted">Graphic Design</p>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
+            <div class="col-md-4 col-sm-6 portfolio-item">
+                <a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">
+                    <div class="portfolio-hover">
+                        <div class="portfolio-hover-content">
+                            <i class="fa fa-plus fa-3x"></i>
                         </div>
-                        <img src="front/img/portfolio/roundicons.png" class="img-responsive" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>Round Icons</h4>
-                        <p class="text-muted">Graphic Design</p>
                     </div>
+                    <img src="front/img/portfolio/startup-framework.png" class="img-responsive" alt="">
+                </a>
+                <div class="portfolio-caption">
+                    <h4>Startup Framework</h4>
+                    <p class="text-muted">Website Design</p>
                 </div>
-                <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
+            </div>
+            <div class="col-md-4 col-sm-6 portfolio-item">
+                <a href="#portfolioModal3" class="portfolio-link" data-toggle="modal">
+                    <div class="portfolio-hover">
+                        <div class="portfolio-hover-content">
+                            <i class="fa fa-plus fa-3x"></i>
                         </div>
-                        <img src="front/img/portfolio/startup-framework.png" class="img-responsive" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>Startup Framework</h4>
-                        <p class="text-muted">Website Design</p>
                     </div>
+                    <img src="front/img/portfolio/treehouse.png" class="img-responsive" alt="">
+                </a>
+                <div class="portfolio-caption">
+                    <h4>Treehouse</h4>
+                    <p class="text-muted">Website Design</p>
                 </div>
-                <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="#portfolioModal3" class="portfolio-link" data-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
+            </div>
+            <div class="col-md-4 col-sm-6 portfolio-item">
+                <a href="#portfolioModal4" class="portfolio-link" data-toggle="modal">
+                    <div class="portfolio-hover">
+                        <div class="portfolio-hover-content">
+                            <i class="fa fa-plus fa-3x"></i>
                         </div>
-                        <img src="front/img/portfolio/treehouse.png" class="img-responsive" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>Treehouse</h4>
-                        <p class="text-muted">Website Design</p>
                     </div>
+                    <img src="front/img/portfolio/golden.png" class="img-responsive" alt="">
+                </a>
+                <div class="portfolio-caption">
+                    <h4>Golden</h4>
+                    <p class="text-muted">Website Design</p>
                 </div>
-                <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="#portfolioModal4" class="portfolio-link" data-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
+            </div>
+            <div class="col-md-4 col-sm-6 portfolio-item">
+                <a href="#portfolioModal5" class="portfolio-link" data-toggle="modal">
+                    <div class="portfolio-hover">
+                        <div class="portfolio-hover-content">
+                            <i class="fa fa-plus fa-3x"></i>
                         </div>
-                        <img src="front/img/portfolio/golden.png" class="img-responsive" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>Golden</h4>
-                        <p class="text-muted">Website Design</p>
                     </div>
+                    <img src="front/img/portfolio/escape.png" class="img-responsive" alt="">
+                </a>
+                <div class="portfolio-caption">
+                    <h4>Escape</h4>
+                    <p class="text-muted">Website Design</p>
                 </div>
-                <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="#portfolioModal5" class="portfolio-link" data-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
+            </div>
+            <div class="col-md-4 col-sm-6 portfolio-item">
+                <a href="#portfolioModal6" class="portfolio-link" data-toggle="modal">
+                    <div class="portfolio-hover">
+                        <div class="portfolio-hover-content">
+                            <i class="fa fa-plus fa-3x"></i>
                         </div>
-                        <img src="front/img/portfolio/escape.png" class="img-responsive" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>Escape</h4>
-                        <p class="text-muted">Website Design</p>
                     </div>
-                </div>
-                <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="#portfolioModal6" class="portfolio-link" data-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="front/img/portfolio/dreams.png" class="img-responsive" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>Dreams</h4>
-                        <p class="text-muted">Website Design</p>
-                    </div>
+                    <img src="front/img/portfolio/dreams.png" class="img-responsive" alt="">
+                </a>
+                <div class="portfolio-caption">
+                    <h4>Dreams</h4>
+                    <p class="text-muted">Website Design</p>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- Team Section -->
-    <section id="team" class="bg-light-gray">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Our Amazing Team</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-4">
-                    <div class="team-member">
-                        <img src="front/img/team/1.jpg" class="img-responsive img-circle" alt="">
-                        <h4>Kay Garland</h4>
-                        <p class="text-muted">Lead Designer</p>
-                        <ul class="list-inline social-buttons">
-                            <li><a href="#"><i class="fa fa-twitter"></i></a>
-                            </li>
-                            <li><a href="#"><i class="fa fa-facebook"></i></a>
-                            </li>
-                            <li><a href="#"><i class="fa fa-linkedin"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="team-member">
-                        <img src="front/img/team/2.jpg" class="img-responsive img-circle" alt="">
-                        <h4>Larry Parker</h4>
-                        <p class="text-muted">Lead Marketer</p>
-                        <ul class="list-inline social-buttons">
-                            <li><a href="#"><i class="fa fa-twitter"></i></a>
-                            </li>
-                            <li><a href="#"><i class="fa fa-facebook"></i></a>
-                            </li>
-                            <li><a href="#"><i class="fa fa-linkedin"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="team-member">
-                        <img src="front/img/team/3.jpg" class="img-responsive img-circle" alt="">
-                        <h4>Diana Pertersen</h4>
-                        <p class="text-muted">Lead Developer</p>
-                        <ul class="list-inline social-buttons">
-                            <li><a href="#"><i class="fa fa-twitter"></i></a>
-                            </li>
-                            <li><a href="#"><i class="fa fa-facebook"></i></a>
-                            </li>
-                            <li><a href="#"><i class="fa fa-linkedin"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <p class="large text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Clients Aside -->
-    <aside class="clients">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-3 col-sm-6">
-                    <a href="#">
-                        <img src="front/img/logos/envato.jpg" class="img-responsive img-centered" alt="">
-                    </a>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <a href="#">
-                        <img src="front/img/logos/designmodo.jpg" class="img-responsive img-centered" alt="">
-                    </a>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <a href="#">
-                        <img src="front/img/logos/themeforest.jpg" class="img-responsive img-centered" alt="">
-                    </a>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <a href="#">
-                        <img src="front/img/logos/creative-market.jpg" class="img-responsive img-centered" alt="">
-                    </a>
-                </div>
-            </div>
-        </div>
-    </aside>
+    </div>
+</section> -->
 
     <!-- Contact Section -->
     <section id="contact">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Contact Us</h2>
+                    <h2 class="section-heading">Me contacter</h2>
                     <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
                 </div>
             </div>

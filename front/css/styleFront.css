@@ -1,7 +1,7 @@
 .timeline > li .timeline-image{
 	background-color: white;
 }
-
+/****************** ETOILES **********************/
 #type_C:after{
 	font-family: 'FontAwesome';
 	content:"\f005 \f005 \f006 \f006 \f006";
@@ -62,7 +62,112 @@
 	content:"\f005 \f005 \f123 \f006 \f006";
 	margin-left: 10px;
 }
-
+/********************** FIN ETOILES *************************************/
+/************************** NAVIGATION **********************************/
 .text-muted{
-	text-align: right;
+	text-align: center;
 }
+
+li a:hover {
+    color: #6D9A97;
+    outline: 0;
+}
+
+.navbar-custom .navbar-brand {
+    color: #6D9A97;
+    font-family: "Kaushan Script","Helvetica Neue",Helvetica,Arial,cursive;
+}
+.navbar-custom .navbar-brand:hover{
+	color: #777;
+}
+
+.navbar-custom .nav li a:focus, .navbar-custom .nav li a:hover {
+    color: #6D9A97;
+    background: #333;
+    border-radius: 3px;
+    outline: 0;
+}
+
+.navbar-custom .navbar-nav > .active > a {
+    border-radius: 0;
+    color: #fff;
+    background-color: #6D9A97;
+}
+
+.text-primary, a {
+    color: #667380;
+}
+.navbar-custom .nav li a:hover,
+.navbar-custom .nav li a:focus {
+  color: #6D9A97;
+  outline: none;
+}
+.navbar-custom .navbar-nav > .active > a {
+  border-radius: 0;
+  color: white;
+  background-color: #6D9A97;
+}
+.navbar-custom .navbar-nav > .active > a:hover,
+.navbar-custom .navbar-nav > .active > a:focus {
+  color: white;
+  background-color: #6D9A97;
+}
+.navbar-custom .navbar-nav > .active > a:focus, .navbar-custom .navbar-nav > .active > a:hover {
+    color: #fff;
+    background-color: #333;
+}
+.navbar-custom .navbar-brand:focus,
+.navbar-custom .navbar-brand:active,
+.navbar-custom .navbar-brand.active {
+  color: #6D9A97;
+}
+
+header .intro-text .intro-lead-in {
+    font-family: "Droid Serif","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-style: italic;
+    font-size: 60px;
+    line-height: 40px;
+    margin-bottom: 30px;
+    color: #6D9A97;
+}
+
+
+/***************FIN NAVIGATION*********************************/
+/************************** BOUTON *************************/
+.btn-xl {
+    color: #fff;
+    background-color: #6D9A97;
+    border-color: #333;
+    border-radius: 3px;
+    font-size: 18px;
+    padding: 20px 40px;
+}
+.btn-xl:hover{
+	background-color: #333;
+	 border-color: #333;
+}
+.btn-xl.active, .btn-xl:active, .btn-xl:focus, .btn-xl:hover, .open .dropdown-toggle.btn-xl {
+    color: #fff;
+    background-color: #6D9A97;
+    border-color: #6D9A97;
+}
+.navbar-custom .navbar-toggle:focus, .navbar-custom .navbar-toggle:hover {
+    background-color: #6D9A97;
+}
+.navbar-custom .navbar-toggle {
+    background-color: #6D9A97;
+    border-color: #6D9A97;
+    font-size: 12px;
+}
+.navbar .navbar-default .navbar-custom .navbar-fixed-top .affix{
+	background-color: #333;
+	border-color: #333;
+}
+
+ul.social-buttons li a:hover,
+ul.social-buttons li a:focus,
+ul.social-buttons li a:active {
+  background-color: #6D9A97;
+}
+
+/********************* FIN BOUTON ********************/
