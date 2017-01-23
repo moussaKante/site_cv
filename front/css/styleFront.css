@@ -52,20 +52,33 @@
 	content:"\f005 \f005 \f005 \f123 \f006";
 	margin-left: 10px;
 }
-#type_GitKraken:after{
+#type_Git:after{
 	font-family: 'FontAwesome';
 	content:"\f005 \f005 \f123 \f006 \f006";
 	margin-left: 10px;
 }
-#type_GitHub:after{
+#type_Photoshop:after{
+	font-family: 'FontAwesome';
+	content:"\f005 \f005 \f005 \f006 \f006";
+	margin-left: 10px;
+}
+#type_Indesign:after{
+	font-family: 'FontAwesome';
+	content:"\f005 \f005 \f005 \f006 \f006";
+	margin-left: 10px;
+}
+#type_Illustrator:after{
 	font-family: 'FontAwesome';
 	content:"\f005 \f005 \f123 \f006 \f006";
 	margin-left: 10px;
 }
+
 /********************** FIN ETOILES *************************************/
 /************************** NAVIGATION **********************************/
 .text-muted{
-	text-align: center;
+	text-align: right;
+	margin-right: 45%;
+
 }
 
 li a:hover {
@@ -99,7 +112,7 @@ li a:hover {
 }
 .navbar-custom .nav li a:hover,
 .navbar-custom .nav li a:focus {
-  color: #6D9A97;
+  color: #fff;
   outline: none;
 }
 .navbar-custom .navbar-nav > .active > a {
@@ -170,4 +183,62 @@ ul.social-buttons li a:active {
   background-color: #6D9A97;
 }
 
+.text-muted{
+	color: #6D9A97;
+}
+
 /********************* FIN BOUTON ********************/
+section#contact ::-webkit-input-placeholder {
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #6D9A97;
+}
+section#contact :-moz-placeholder {
+  /* Firefox 18- */
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #6D9A97;
+}
+section#contact ::-moz-placeholder {
+  /* Firefox 19+ */
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #6D9A97;
+}
+section#contact :-ms-input-placeholder {
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #6D9A97;
+}
+
+section#contact .form-control:focus {
+  border-color: #6D9A97;
+  box-shadow: none;
+}
+
+.timeline > li .timeline-image {
+    border: 3px solid #6D9A97;
+}
+
+
+.team-member {
+  text-align: center;
+  margin-bottom: 50px;
+}
+.team-member img {
+  margin: 0 auto;
+  border: 3px solid #6D9A97;
+}
+
+::-moz-selection {
+  text-shadow: none;
+  background: #0058D7;
+}
+::selection {
+  text-shadow: none;
+  background: #0058D7;
+}

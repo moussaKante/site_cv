@@ -9,7 +9,7 @@
 				<li class="liste"><a href="utilisateur.php">Espace utilisateur</a></li>
 				<li class="liste"><a href="formation.php">Espace formation </a></li>
 				<li class="liste"><a href="titre.php">Espace titre </a></li>
-				<li class="liste"><a href="index.php?deconnect=oui">Deconnexion </a></li>
+				<li class="liste"><a href="index.php?deconnect">Deconnexion </a></li>
 			</ul>
 				<div class="clear"></div>
 		</nav>
