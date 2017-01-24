@@ -91,15 +91,17 @@ $competence = $resultat->fetchAll();
     </nav>
 
     <!-- Header -->
-    <header>
-        <div class="container">
-            <div class="intro-text">
-                <div class="intro-lead-in"><?= $utilisateur['prenom'].' '.$utilisateur['nom'] ?></div>
-                <div class="intro-heading"><?= $titre['titre_cv']; ?></div>
-                <a href="#services" class="page-scroll btn btn-xl">En savoir plus</a>
+    <div class="parallax-window" data-parallax="scroll" data-image-src="front/img/header-bg.jpg">
+        <header>
+            <div class="container">
+                <div class="intro-text">
+                    <div class="intro-lead-in"><?= $utilisateur['prenom'].' '.$utilisateur['nom'] ?></div>
+                    <div class="intro-heading"><?= $titre['titre_cv']; ?></div>
+                    <a href="#services" class="page-scroll btn btn-xl">En savoir plus</a>
+                </div>
             </div>
-        </div>
-    </header>
+        </header>
+    </div>
 
     <!-- Services Section -->
     <section id="services" class="bg-light-gray">
@@ -112,7 +114,7 @@ $competence = $resultat->fetchAll();
                         </div>
                     </div>
                     <h2 class="section-heading">A propos</h2>
-                    <h3 class="section-subheading text-muted ">Hier passionnée par le web , aujourd'hui jeune développeur,j'ai transformé ma passion en travail. Curieux et sérieux , je saurai repondre à toutes vos attentes.  </h3>
+                    <h3 class="section-subheading text-muted-center ">Hier passionnée par le web , aujourd'hui jeune développeur,j'ai transformé ma passion en travail. Curieux et sérieux , je saurai repondre à toutes vos attentes.  </h3>
                 </div>
             </div>
             <div class="row text-center">
@@ -122,7 +124,7 @@ $competence = $resultat->fetchAll();
                         <i class="fa fa-desktop fa-stack-1x fa-inverse"></i>
                     </span>
                     <h4 class="service-heading">Développement Web</h4>
-                    <p class="text-muted">Toujours à l'affut de nouveauté, je suis disponible pour vos réalisations et ouvert à de nouvelles opportunités professionelles.</p>
+                    <p class="text-muted-center">Toujours à l'affut de nouveauté, je suis disponible pour vos réalisations et ouvert à de nouvelles opportunités professionelles.</p>
                 </div>
                 <div class="col-md-6">
                     <span class="fa-stack fa-4x">
@@ -130,7 +132,7 @@ $competence = $resultat->fetchAll();
                         <i class="fa fa-tablet fa-stack-1x fa-inverse"></i>
                     </span>
                     <h4 class="service-heading">Responsive Design</h4>
-                    <p class="text-muted">Je propose des sites responsives capables de s'adapter à tous vos écrans.</p>
+                    <p class="text-muted-center">Je propose des sites responsives capables de s'adapter à tous vos écrans.</p>
                 </div>
 <!--                 <div class="col-md-4">
     <span class="fa-stack fa-4x">
@@ -143,9 +145,9 @@ $competence = $resultat->fetchAll();
             </div> -->
         </div>
     </section>
-
+<div class="parallax-window" data-parallax="scroll" data-image-src="front/img/header-bg.jpg"></div>
      <!-- About Mon CV -->
-    <section id="mon_cv">
+    <section id="mon_cv" class="section">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
@@ -169,19 +171,28 @@ $competence = $resultat->fetchAll();
                                             <h4 class="subheading"><?= $experience[$i]['titre_exp'].' <br> '.$experience[$i]['sous_titre_exp'];?></h4>
                                     </div>
                                     <div class="timeline-body">
-                                        <p class="text-muted"><?= $experience[$i]['description'];?></p>
+                                        <p class=""><?= $experience[$i]['description'];?></p>
                                     </div>
                                 </div>
                             </li><?php
                             $i++;
                     }                        
                      ?>
-                    </ul>
+                    </ul>  
                 </div>
+            </div>
+            <div class="col-md-12 text-center">
+                <a class="BoutonTelechargement" href="">
+                <span class="fa-stack fa-2x">
+                    <i class="fa fa-download fa-stack-2x text-primary"></i>
+                    <i class="fa fa-desktop fa-stack-1x fa-inverse"></i>
+                </span>
+                Télecharger mon CV
+                </a>
             </div>
         </div>
     </section>
-  
+<div class="parallax-window" data-parallax="scroll" data-image-src="front/img/header-bg.jpg"></div>
   <!-- Services formation -->
     <section id="formation" class="bg-light-gray">
         <div class="container">
@@ -200,7 +211,7 @@ $competence = $resultat->fetchAll();
                 while($i<count($formation)){?>
                 <div class="col-md-6">
                 <h4 class="service-heading"><?= $formation[$i]['titre_formation'] ?></h4>
-                <p class="text-muted"><?= $formation[$i]['dates_formation'].'<br>'.$formation[$i]['description_formation'] ?></p>
+                <p class="text-muted-left"><?= $formation[$i]['dates_formation'].'<br>'.$formation[$i]['description_formation'] ?></p>
                 </div>
                  <?php
                  $i++;
@@ -210,8 +221,9 @@ $competence = $resultat->fetchAll();
             
         </div>
     </section>
+<div class="parallax-window" data-parallax="scroll" data-image-src="front/img/header-bg.jpg"></div>
   <!-- Services compétence -->
-    <section id="competence" >
+    <section id="competence" class="section" >
         <div class="container">
              <div class="row">
                 <div class="col-lg-12 text-center">
@@ -604,7 +616,6 @@ $competence = $resultat->fetchAll();
     <!-- jQuery -->
     <script src="front/vendor/jquery/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script src="/path/to/parallax.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="front/vendor/bootstrap/js/bootstrap.min.js"></script>
@@ -619,6 +630,8 @@ $competence = $resultat->fetchAll();
     <!-- Theme JavaScript -->
     <script src="front/js/agency.min.js"></script>
 
+    <script src="front/js/parallax.js/parallax.js"></script>
+    <script src="front/js/main.js"></script>
 </body>
 
 </html>

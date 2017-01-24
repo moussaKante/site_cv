@@ -78,7 +78,15 @@
 .text-muted{
 	text-align: right;
 	margin-right: 45%;
-
+	color: #6D9A97;
+}
+.text-muted-center{
+	color: #6D9A97;
+	text-align: center;
+}
+.text-muted-left{
+	color: #6D9A97;
+	text-align: left;
 }
 
 li a:hover {
@@ -108,7 +116,7 @@ li a:hover {
 }
 
 .text-primary, a {
-    color: #667380;
+    color: #709B9B;
 }
 .navbar-custom .nav li a:hover,
 .navbar-custom .nav li a:focus {
@@ -183,9 +191,7 @@ ul.social-buttons li a:active {
   background-color: #6D9A97;
 }
 
-.text-muted{
-	color: #6D9A97;
-}
+
 
 /********************* FIN BOUTON ********************/
 section#contact ::-webkit-input-placeholder {
@@ -241,4 +247,32 @@ section#contact .form-control:focus {
 ::selection {
   text-shadow: none;
   background: #0058D7;
+}
+
+.parallax-window {
+    min-height: 400px;
+    background: transparent;
+}
+
+header{
+	background-image: none;
+	text-shadow: 1px 1px 1px black;
+}
+.section{
+	box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+/******************** BOUTON TELECHARGER  *************************/
+
+.BoutonTelechargement{
+	background-color: #333333;
+	padding:  10px;
+	border-radius: 3px;
+	display: inline-block;
+	margin-top: 25px;
+
+}
+.BoutonTelechargement:hover{
+	color: #eeeeee;
+	text-decoration: none;
 }
