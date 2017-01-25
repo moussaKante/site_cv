@@ -181,7 +181,7 @@ $competence = $resultat->fetchAll();
                     </ul>  
                 </div>
             </div>
-            <div class="col-md-12 text-center">
+            <!-- <div class="col-md-12 text-center">
                 <a class="BoutonTelechargement" href="">
                 <span class="fa-stack fa-2x">
                     <i class="fa fa-download fa-stack-2x text-primary"></i>
@@ -189,6 +189,10 @@ $competence = $resultat->fetchAll();
                 </span>
                 Télecharger mon CV
                 </a>
+            </div> -->
+            <div class="button">
+                <a href="#">Télécharger</a>
+                <p class="top">Nom du fichier :Thomas Kante</p>
             </div>
         </div>
     </section>

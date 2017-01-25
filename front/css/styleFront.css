@@ -193,7 +193,8 @@ ul.social-buttons li a:active {
 
 
 
-/********************* FIN BOUTON ********************/
+/********************** FIN BOUTON ********************/
+/********************** FORM *************************/
 section#contact ::-webkit-input-placeholder {
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
@@ -225,6 +226,19 @@ section#contact .form-control:focus {
   border-color: #6D9A97;
   box-shadow: none;
 }
+
+section#contact {
+  background-color: #222222;
+  background-image: url('../img/map-image.png');
+  background-position: center;
+  background-repeat: no-repeat;
+}
+section#contact .form-control:focus {
+  border-color: #6D9A97;
+  box-shadow: none;
+}
+
+/******************* FIN FORM **********************/
 
 .timeline > li .timeline-image {
     border: 3px solid #6D9A97;
@@ -264,7 +278,7 @@ header{
 
 /******************** BOUTON TELECHARGER  *************************/
 
-.BoutonTelechargement{
+/* .BoutonTelechargement{
 	background-color: #333333;
 	padding:  10px;
 	border-radius: 3px;
@@ -275,4 +289,54 @@ header{
 .BoutonTelechargement:hover{
 	color: #eeeeee;
 	text-decoration: none;
+}
+ */
+.button {
+    width: 200px;
+    margin: 150px auto;
+}
+
+.button a {
+    display: block;
+    height: 50px;
+    width: 200px;
+    color: white;
+    font: 17px/50px sans-serif,Helvetica;
+    text-decoration: none;
+    text-align: center;
+    text-transform: uppercase;
+    background: #6D9A97; 
+}
+
+.button .top {
+    background: #333;
+    display: block;
+    height: 40px;
+    width: 180px;
+    margin: -50px 0 0 10px;
+    text-align: center;
+    font: 14px/45px sans-serif,Helvetica;
+    color: #eee;
+    position: absolute;
+    z-index: -1;
+    -webkit-transition: margin 0.7s cubic-bezier(0.6, -0.28, 0.74, 0.05);
+    -moz-transition: margin 0.7s cubic-bezier(0.6, -0.28, 0.74, 0.05);
+    -o-transition: margin 0.7s cubic-bezier(0.6, -0.28, 0.74, 0.05);
+    -ms-transition: margin 0.7s cubic-bezier(0.6, -0.28, 0.74, 0.05);
+    transition: margin 0.7s cubic-bezier(0.6, -0.28, 0.74, 0.05);
+}
+
+
+.button a, .top {
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 13px;
+    -webkit-box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+    -moz-box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+}
+
+.button:hover .top {
+    margin: -80px 0 0 10px;
+    line-height: 35px;
 }
