@@ -110,7 +110,7 @@ $competence = $resultat->fetchAll();
                 <div class="col-lg-12 text-center">
                     <div class="col-sm-12">
                         <div class="team-member">
-                            <img src="front/img/team/1.jpg" class="img-responsive img-circle" alt="" style="width: 20%">
+                            <img src="front/img/team/moi02.png" class="img-responsive img-circle" alt="" style="width: 20%">
                         </div>
                     </div>
                     <h2 class="section-heading">A propos</h2>
@@ -425,9 +425,9 @@ $competence = $resultat->fetchAll();
                 </div>
                 <div class="col-md-4">
                     <ul class="list-inline quicklinks">
-                        <li><a href="#">Privacy Policy</a>
+                        <li><a href="#"></a>
                         </li>
-                        <li><a href="#">Terms of Use</a>
+                        <li><a href="admin/authentification.php">Connexion Admin</a>
                         </li>
                     </ul>
                 </div>
