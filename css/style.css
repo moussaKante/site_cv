@@ -362,3 +362,13 @@ label {
 	text-decoration: none;
 	color:#6D9A97;
 }
+
+.ssmenu{
+	opacity: 0;
+	overflow: hidden;
+	display: none;
+}
+.ssmenu:hover{
+	position: relative;
+	opacity: 1;
+}

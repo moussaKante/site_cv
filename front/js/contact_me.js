@@ -20,11 +20,11 @@ $(function() {
                 firstName = name.split(' ').slice(0, -1).join(' ');
             }
             $.ajax({
-                url: "././mail/contact_me.php",
+                url: "/site_cv/front/mail/contact_me.php",
                 type: "POST",
                 data: {
-                    name: name,
-                    phone: phone,
+                    prenom: name,
+                    telephone: phone,
                     email: email,
                     message: message
                 },
@@ -35,7 +35,7 @@ $(function() {
                     $('#success > .alert-success').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
                         .append("</button>");
                     $('#success > .alert-success')
-                        .append("<strong>Your message has been sent. </strong>");
+                        .append("<strong>Votre message a bien été envoyé </strong>");
                     $('#success > .alert-success')
                         .append('</div>');
 
@@ -47,7 +47,7 @@ $(function() {
                     $('#success').html("<div class='alert alert-danger'>");
                     $('#success > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
                         .append("</button>");
-                    $('#success > .alert-danger').append("<strong>Sorry " + firstName + ", it seems that my mail server is not responding. Please try again later!");
+                    $('#success > .alert-danger').append("<strong>Désole " + firstName + ",  il semble que mon serveur email ne repond pas.S'il vous plaît veuillez essayer plus tard!");
                     $('#success > .alert-danger').append('</div>');
                     //clear all fields
                     $('#contactForm').trigger("reset");

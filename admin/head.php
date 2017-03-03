@@ -1,5 +1,5 @@
 <head>
-	<meta charset="utf_8" />
+	<meta charset="utf-8" />
 	<title><?php echo $page ?></title>
 	<script src="../ckeditor/ckeditor.js"></script>
 	<link rel="stylesheet" type="text/css" href="../css/style.css">
