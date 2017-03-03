@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <?php require('connexion/connexion.php'); ?>
-<?php 
+<?php
 $resultat = $pdo -> query("SELECT * FROM utilisateur") ;
 $utilisateur = $resultat->fetch();
 $resultat = $pdo -> query("SELECT * FROM titre");
@@ -13,8 +13,17 @@ $resultat = $pdo -> query("SELECT * FROM experiences");
 $experience = $resultat->fetchAll();
 $resultat = $pdo -> query("SELECT * FROM competence");
 $competence = $resultat->fetchAll();
+if($_POST){
+    $resultat = $pdo -> prepare("INSERT INTO contact (id_contact,prenom,email,telephone,message) VALUES(:id_contact,:prenom,:email,:telephone,:message)");
+    $resultat -> bindParam(':id_contact',$_POST['id_contact'],PDO::PARAM_INT);
+    $resultat -> bindParam(':prenom',$_POST['prenom'],PDO::PARAM_STR);
+    $resultat -> bindParam(':email',$_POST['email'],PDO::PARAM_STR);
+    $resultat -> bindParam(':telephone',$_POST['telephone'],PDO::PARAM_INT);
+    $resultat -> bindParam(':message',$_POST['message'],PDO::PARAM_STR);
+    $resultat -> execute();
+}
  ?>
-<html lang="en">
+<html lang="fr">
 
 <head>
 
@@ -81,6 +90,9 @@ $competence = $resultat->fetchAll();
                         <a class="page-scroll" href="#competence">Compétence</a>
                     </li>
                     <li>
+                        <a class="page-scroll" href="#portfolio">Portfolio</a>
+                    </li>
+                    <li>
                         <a class="page-scroll" href="#contact">Contact</a>
                     </li>
                 </ul>
@@ -110,7 +122,7 @@ $competence = $resultat->fetchAll();
                 <div class="col-lg-12 text-center">
                     <div class="col-sm-12">
                         <div class="team-member">
-                            <img src="front/img/team/moi02.png" class="img-responsive img-circle" alt="" style="width: 20%">
+                            <img src="front/img/team/moi02.png" class="img-responsive img-circle" id="moi"alt="" >
                         </div>
                     </div>
                     <h2 class="section-heading">A propos</h2>
@@ -145,13 +157,17 @@ $competence = $resultat->fetchAll();
             </div> -->
         </div>
     </section>
-<div class="parallax-window" data-parallax="scroll" data-image-src="front/img/header-bg.jpg"></div>
+<!-- <div class="parallax-window" data-parallax="scroll" data-image-src="front/img/header-bg.jpg"></div> -->
      <!-- About Mon CV -->
     <section id="mon_cv" class="section">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Mes Expériences </h2>
+                     <span class="fa-stack fa-4x">
+                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                        <i class="fa fa-briefcase fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <h2 class="section-heading">Mes Expériences professionelles </h2>
                 </div>
             </div>
             <div class="row">
@@ -176,9 +192,9 @@ $competence = $resultat->fetchAll();
                                 </div>
                             </li><?php
                             $i++;
-                    }                        
+                    }
                      ?>
-                    </ul>  
+                    </ul>
                 </div>
             </div>
             <!-- <div class="col-md-12 text-center">
@@ -191,25 +207,25 @@ $competence = $resultat->fetchAll();
                 </a>
             </div> -->
             <div class="button">
-                <a href="#">Télécharger</a>
-                <p class="top">Nom du fichier :Thomas Kante</p>
+                <a href="thomas_kante1.pdf">mon cv pdf</a>
+                <p class="top">fichier :thomas_kante1.pdf</p>
             </div>
         </div>
     </section>
-<div class="parallax-window" data-parallax="scroll" data-image-src="front/img/header-bg.jpg"></div>
+<!-- <div class="parallax-window" data-parallax="scroll" data-image-src="front/img/header-bg.jpg"></div> -->
   <!-- Services formation -->
     <section id="formation" class="bg-light-gray">
         <div class="container">
              <div class="row">
                 <div class="col-lg-12 text-center">
-                 <span class="fa-stack fa-4x">
+                    <span class="fa-stack fa-4x">
                         <i class="fa fa-circle fa-stack-2x text-primary"></i>
                         <i class="fa fa-graduation-cap fa-stack-1x fa-inverse"></i>
                     </span>
                     <h2 class="section-heading">Mes formations</h2>
                 </div>
             </div>
-            
+
             <?php
                 $i=0;
                 while($i<count($formation)){?>
@@ -222,24 +238,24 @@ $competence = $resultat->fetchAll();
              }
 
                  ?>
-            
+
         </div>
     </section>
-<div class="parallax-window" data-parallax="scroll" data-image-src="front/img/header-bg.jpg"></div>
+<!-- <div class="parallax-window" data-parallax="scroll" data-image-src="front/img/header-bg.jpg"></div> -->
   <!-- Services compétence -->
     <section id="competence" class="section" >
         <div class="container">
              <div class="row">
                 <div class="col-lg-12 text-center">
+                <span class="fa-stack fa-4x ">
+                    <i class="fa fa-html5 fa-stack-2x text-primary"></i>
+                </span>
                     <h2 class="section-heading">Mes Compétences</h2>
                 </div>
             </div>
             <div class="col-md-12 text-center">
-                <span class="fa-stack fa-4x ">
-                    <i class="fa fa-html5 fa-stack-2x text-primary"></i>
-                </span>
-            <h4 class="service-heading"><?= $competence[0]['titre_competence']; ?></h4>
-            </div>   
+                <h4 class="service-heading"><?= $competence[0]['titre_competence']; ?></h4>
+            </div>
                 <?php
                     $i=0;?>
                     <div class="row">
@@ -248,8 +264,8 @@ $competence = $resultat->fetchAll();
                            echo '<div class="col-md-6">';
                         } ?>
                             <p class="text-muted" id="<?= 'type_'.$competence[$i]['competence'];?>"><?= $competence[$i]['competence'] ?></p>
-                        
-                        
+
+
                         <?php if($i%round(count($competence)/2)== round(count($competence)/2)-1) {
                             echo '</div><div class="col-md-6">';
                         } ?>
@@ -258,14 +274,14 @@ $competence = $resultat->fetchAll();
                         } ?>
                      <?php
                      $i++;
-                    } 
+                    }
 
                 ?>
-                </div>  
+                </div>
         </div>
     </section>
 
-<!--     Portfolio Grid Section
+<!-- Portfolio Grid Section -->
 <section id="portfolio" class="bg-light-gray">
     <div class="container">
         <div class="row">
@@ -282,7 +298,7 @@ $competence = $resultat->fetchAll();
                             <i class="fa fa-plus fa-3x"></i>
                         </div>
                     </div>
-                    <img src="front/img/portfolio/roundicons.png" class="img-responsive" alt="">
+                    <img src="front/img/portfolio/thomaskante.png" class="img-responsive" alt="">
                 </a>
                 <div class="portfolio-caption">
                     <h4>Round Icons</h4>
@@ -296,7 +312,7 @@ $competence = $resultat->fetchAll();
                             <i class="fa fa-plus fa-3x"></i>
                         </div>
                     </div>
-                    <img src="front/img/portfolio/startup-framework.png" class="img-responsive" alt="">
+                    <img src="front/img/portfolio/sentinelle.png" class="img-responsive" alt="">
                 </a>
                 <div class="portfolio-caption">
                     <h4>Startup Framework</h4>
@@ -317,81 +333,43 @@ $competence = $resultat->fetchAll();
                     <p class="text-muted">Website Design</p>
                 </div>
             </div>
-            <div class="col-md-4 col-sm-6 portfolio-item">
-                <a href="#portfolioModal4" class="portfolio-link" data-toggle="modal">
-                    <div class="portfolio-hover">
-                        <div class="portfolio-hover-content">
-                            <i class="fa fa-plus fa-3x"></i>
-                        </div>
-                    </div>
-                    <img src="front/img/portfolio/golden.png" class="img-responsive" alt="">
-                </a>
-                <div class="portfolio-caption">
-                    <h4>Golden</h4>
-                    <p class="text-muted">Website Design</p>
-                </div>
-            </div>
-            <div class="col-md-4 col-sm-6 portfolio-item">
-                <a href="#portfolioModal5" class="portfolio-link" data-toggle="modal">
-                    <div class="portfolio-hover">
-                        <div class="portfolio-hover-content">
-                            <i class="fa fa-plus fa-3x"></i>
-                        </div>
-                    </div>
-                    <img src="front/img/portfolio/escape.png" class="img-responsive" alt="">
-                </a>
-                <div class="portfolio-caption">
-                    <h4>Escape</h4>
-                    <p class="text-muted">Website Design</p>
-                </div>
-            </div>
-            <div class="col-md-4 col-sm-6 portfolio-item">
-                <a href="#portfolioModal6" class="portfolio-link" data-toggle="modal">
-                    <div class="portfolio-hover">
-                        <div class="portfolio-hover-content">
-                            <i class="fa fa-plus fa-3x"></i>
-                        </div>
-                    </div>
-                    <img src="front/img/portfolio/dreams.png" class="img-responsive" alt="">
-                </a>
-                <div class="portfolio-caption">
-                    <h4>Dreams</h4>
-                    <p class="text-muted">Website Design</p>
-                </div>
-            </div>
         </div>
     </div>
-</section> -->
+</section>
 
     <!-- Contact Section -->
     <section id="contact">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
+                     <span class="fa-stack fa-4x">
+                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                        <i class="fa fa-envelope-o fa-stack-1x fa-inverse"></i>
+                    </span>
                     <h2 class="section-heading">Me contacter</h2>
                 </div>
             </div>
             <div class="row">
                 <div class="col-lg-12">
-                    <form name="sentMessage" id="contactForm" novalidate>
+                    <form method="post" name="sentMessage" id="contactForm" >
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="NOM,PRENOM *" id="name" required data-validation-required-message="Please enter your name.">
+                                    <input type="text" class="form-control" placeholder="PRENOM,NOM *" id="name" required data-validation-required-message="Veuillez entrer votre prenom,nom." name="prenom">
                                     <p class="help-block text-danger"></p>
                                 </div>
                                 <div class="form-group">
-                                    <input type="email" class="form-control" placeholder="Email *" id="email" required data-validation-required-message="Please enter your email address.">
+                                    <input type="email" class="form-control" placeholder="Email *" id="email" required data-validation-required-message="Veuillez entrer votre adresse email." name="email">
                                     <p class="help-block text-danger"></p>
                                 </div>
                                 <div class="form-group">
-                                    <input type="tel" class="form-control" placeholder="TELEPHONE *" id="phone" required data-validation-required-message="Please enter your phone number.">
+                                    <input type="tel" class="form-control" placeholder="TELEPHONE *" id="phone" required data-validation-required-message="Veuillez entrer votre numéro de télephone." name="telephone">
                                     <p class="help-block text-danger"></p>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <textarea class="form-control" placeholder="VOTRE MESSAGE *" id="message" required data-validation-required-message="Please enter a message."></textarea>
+                                    <textarea class="form-control" placeholder="VOTRE MESSAGE *" id="message" required data-validation-required-message="Veuillez entrer votre message." name="message"></textarea>
                                     <p class="help-block text-danger"></p>
                                 </div>
                             </div>
@@ -411,7 +389,7 @@ $competence = $resultat->fetchAll();
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
-                    <span class="copyright">Copyright &copy; <?= $utilisateur['prenom'].' '.$utilisateur['nom']; ?> 2016</span>
+                    <span class="copyright">Copyright &copy; <?= $utilisateur['prenom'].' '.$utilisateur['nom'].' '. date('Y'); ?> </span>
                 </div>
                 <div class="col-md-4">
                     <ul class="list-inline social-buttons">
@@ -420,6 +398,8 @@ $competence = $resultat->fetchAll();
                         <li><a href="#"><i class="fa fa-facebook"></i></a>
                         </li>
                         <li><a href="#"><i class="fa fa-linkedin"></i></a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-github"></i></a>
                         </li>
                     </ul>
                 </div>
@@ -435,11 +415,11 @@ $competence = $resultat->fetchAll();
         </div>
     </footer>
 
-    <!-- Portfolio Modals -->
-    <!-- Use the modals below to showcase details about your portfolio projects! -->
-
-    <!-- Portfolio Modal 1 -->
-  <!--   <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Portfolio Modals
+    Use the modals below to showcase details about your portfolio projects! 
+    
+    Portfolio Modal 1 -->
+      <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
       <div class="modal-dialog">
           <div class="modal-content">
               <div class="close-modal" data-dismiss="modal">
@@ -455,7 +435,7 @@ $competence = $resultat->fetchAll();
                               Project Details Go Here
                               <h2>Project Name</h2>
                               <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                              <img class="img-responsive img-centered" src="front/img/portfolio/roundicons-free.png" alt="">
+                              <img class="img-responsive img-centered" src="front/img/portfolio/thomaskante.png" alt="">
                               <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
                               <p>
                                   <strong>Want these icons in this portfolio item sample?</strong>You can download 60 of them for free, courtesy of <a href="https://getdpd.com/cart/hoplink/18076?referrer=bvbo4kax5k8ogc">RoundIcons.com</a>, or you can purchase the 1500 icon set <a href="https://getdpd.com/cart/hoplink/18076?referrer=bvbo4kax5k8ogc">here</a>.</p>
@@ -471,9 +451,9 @@ $competence = $resultat->fetchAll();
               </div>
           </div>
       </div>
-  </div>
-  
-  Portfolio Modal 2
+      </div> 
+
+ <!-- Portfolio Modal 2
   <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
       <div class="modal-dialog">
           <div class="modal-content">
@@ -500,7 +480,7 @@ $competence = $resultat->fetchAll();
           </div>
       </div>
   </div>
-  
+
   Portfolio Modal 3
   <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
       <div class="modal-dialog">
@@ -529,7 +509,7 @@ $competence = $resultat->fetchAll();
           </div>
       </div>
   </div>
-  
+
   Portfolio Modal 4
   <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
       <div class="modal-dialog">
@@ -558,7 +538,7 @@ $competence = $resultat->fetchAll();
           </div>
       </div>
   </div>
-  
+
   Portfolio Modal 5
   <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
       <div class="modal-dialog">
@@ -587,7 +567,7 @@ $competence = $resultat->fetchAll();
           </div>
       </div>
   </div>
-  
+
   Portfolio Modal 6
   <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
       <div class="modal-dialog">
